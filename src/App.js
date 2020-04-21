@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './styles.scss'
+import RadioButton from './components/RadioButton/RadioButton'
+import Question from './components/Question/Question'
 function App() {
+  const inputOptions = [`Learn Test driven development.`,'Sports','Songs']
+  const questionInput = `Learn language syntax, data structures, it's paradigms, design patterns, Scopes and closures
+  ES6
+  MVC, MVVM`
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Question questionInput={questionInput}/>
+      <RadioButton inputOptions={inputOptions}/>
     </div>
   );
 }
