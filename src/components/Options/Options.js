@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 
-function onOptionChange(){
 
-}
 function Options(props) {
-    const { option, ids } = props
-    const [slectedValue, setSlectedValue] = useState('')
+    const { option, ids,onOptionChange } = props
     return (
         <>
-            <input type="radio" name="rb" id={ids} value={option} onClick={onOptionChange}/>
+            <input type="radio" name="rb" id={ids} value={option} onClick={()=>onOptionChange(option)}/>
             <label htmlFor={ids}>{option}</label>
         </>
     );
