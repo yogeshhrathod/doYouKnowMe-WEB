@@ -5,7 +5,7 @@ function AllRadioButtons(inputOptions) {
 
   let options = []
   for (let index = 0; index < inputArray.length; index++) {
-    options.push(<Options option={inputArray[index]} key={`rb${index}`} ids={`rb${index}`}/>)
+    options.push(<Options option={inputArray[index]} key={`rb${index}`} ids={`rb${index}`} />)
   }
 
   console.log(options);
