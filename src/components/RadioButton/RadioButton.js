@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+
 import Options from '../Options/Options'
 function AllRadioButtons(inputOptions) {
   const { inputArray, onOptionChange } = inputOptions
@@ -8,8 +9,6 @@ function AllRadioButtons(inputOptions) {
     options.push(<Options option={inputArray[index]} key={`rb${index}`} ids={`rb${index}`} onOptionChange={onOptionChange}/>)
   }
 
-  console.log(options);
-
   return (
     <>
       {options}
@@ -17,11 +16,14 @@ function AllRadioButtons(inputOptions) {
   );
 }
 function RadioButton(props) {
-  const [optionValue, setoptionValue] = useState('')
+  const [optionValue, setOptionValue] = useState('')
   const { inputOptions } = props
   function onOptionChange(value){
-    setoptionValue(value)
+    setOptionValue(value)
   }
+  useEffect(() => {
+   console.log(optionValue);
+  })
   return (
     <div className="group">
       <AllRadioButtons inputArray={inputOptions} onOptionChange={onOptionChange} />
