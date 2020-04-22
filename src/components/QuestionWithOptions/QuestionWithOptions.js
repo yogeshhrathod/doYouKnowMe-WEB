@@ -3,6 +3,7 @@ import RadioButton from "../RadioButton/RadioButton";
 import Question from "../Question/Question";
 import Button from "../Button/Button";
 import questionObject from "../../mockData/questionData";
+import Alert from '../Alert/Alert'
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questionInput, setQuestionInput] = useState(
@@ -13,6 +14,7 @@ function App() {
   );
   const [isButtonDisable, setIsButtonDisable] = useState(true);
   const [optionValue, setOptionValue] = useState("");
+  const [isDisplay, setIsDisplay] = useState(false)
   const nextLabel = "Next";
   const submitLabel = "Submit";
   const nextQuestion = () => {
@@ -24,13 +26,24 @@ function App() {
         //finish test logic
       }
     }
+    else
+    {
+      showingAlert()
+    }
     setIsButtonDisable(true);
   };
+  const showingAlert =()=>{
+    setIsDisplay(true)
+    setTimeout(()=>{
+      setIsDisplay(false)
+    },3000)
+  }
   const onOptionChange = (value) => {
     setOptionValue(value);
     console.log("value is " + value);
     setIsButtonDisable(value ? false : true);
   };
+
   useEffect(() => {
     setInputOptions(questionObject[currentQuestion].inputOptions);
     setQuestionInput(questionObject[currentQuestion].questionInput);
@@ -38,6 +51,7 @@ function App() {
   });
   return (
     <div>
+      <Alert message={`Please select an option dude. 😰`} isDisplay={isDisplay}/>
       <Question questionInput={questionInput} />
       <RadioButton
         inputOptions={inputOptions}

@@ -1,7 +1,9 @@
 $clouds: #ecf0f1;
 $midnight: #2c3e50;
 $wisteria: #8e44ad;
-
+*{
+  box-sizing: border-box;
+}
 body {
   display: flex;
   justify-content: center;
@@ -85,6 +87,24 @@ input[type="radio"]:checked + label {
     height: 2em;
     background: white;
   }
+}
+.error{
+  background-color: tomato;
+  border: 0.1em solid white;
+  color: white;
+  font-weight: bolder;
+  padding: 0.8em;
+  text-align: center;
+  margin: 1em;
+  border-radius: .5em;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  position: relative;
+  display: none;
+}
+.displayAlert{
+  display: block;
 }
 
 /* Transition */
