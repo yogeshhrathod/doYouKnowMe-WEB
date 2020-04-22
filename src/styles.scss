@@ -5,14 +5,15 @@ $wisteria: #8e44ad;
   box-sizing: border-box;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background: $wisteria;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.4em;
+}
+.questionLayout{
+margin-top: 5em;
+flex-direction: column;
 }
 h1 {
   margin: 0 0 1em;
@@ -89,6 +90,8 @@ input[type="radio"]:checked + label {
   }
 }
 .error{
+  position: fixed;
+  top: -100px;
   background-color: tomato;
   border: 0.1em solid white;
   color: white;
@@ -100,11 +103,12 @@ input[type="radio"]:checked + label {
   -webkit-transition: 0.25s all ease;
   -o-transition: 0.25s all ease;
   transition: 0.25s all ease;
-  position: relative;
-  display: none;
+  -o-transition: 0.25s all ease;
+  right: 0;
 }
 .displayAlert{
   display: block;
+  transform: translateY(100px);
 }
 
 /* Transition */

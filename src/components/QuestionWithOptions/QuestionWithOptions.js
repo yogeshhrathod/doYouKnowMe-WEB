@@ -50,22 +50,24 @@ function App() {
     setOptionValue("");
   });
   return (
-    <div>
+    <>
       <Alert message={`Please select an option dude. 😰`} isDisplay={isDisplay}/>
-      <Question questionInput={questionInput} />
-      <RadioButton
-        inputOptions={inputOptions}
-        onOptionChange={onOptionChange}
-        questionId={currentQuestion}
-      />
-      <Button
-        label={
-          currentQuestion < questionObject.length - 1 ? nextLabel : submitLabel
-        }
-        onClick={nextQuestion}
-        isButtonDisable={isButtonDisable}
-      />
-    </div>
+      <div className='questionLayout'>
+        <Question questionInput={questionInput} />
+        <RadioButton
+          inputOptions={inputOptions}
+          onOptionChange={onOptionChange}
+          questionId={currentQuestion}
+        />
+        <Button
+          label={
+            currentQuestion < questionObject.length - 1 ? nextLabel : submitLabel
+          }
+          onClick={nextQuestion}
+          isButtonDisable={isButtonDisable}
+        />
+      </div>
+    </>
   );
 }
 
