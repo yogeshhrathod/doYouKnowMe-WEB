@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 function Question(props) {
-    const { questionInput } = props
-    return (
-        <div className="question">
-            {questionInput}
-        </div>
-    );
+  const { questionInput } = props;
+  return <div className="question">{questionInput}</div>;
 }
 
-export default Question
+export default Question;
