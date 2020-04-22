@@ -1,34 +1,35 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Options from '../Options/Options'
+import Options from "../Options/Options";
 function AllRadioButtons(inputOptions) {
-  const { inputArray, onOptionChange } = inputOptions
+  const { inputArray, onOptionChange, questionId } = inputOptions;
 
-  let options = []
+  let options = [];
   for (let index = 0; index < inputArray.length; index++) {
-    options.push(<Options option={inputArray[index]} key={`rb${index}`} ids={`rb${index}`} onOptionChange={onOptionChange}/>)
+    options.push(
+      <Options
+        option={inputArray[index]}
+        key={`rb${index}`}
+        ids={`rb${index}`}
+        onOptionChange={onOptionChange}
+        questionId={questionId}
+      />
+    );
   }
 
-  return (
-    <>
-      {options}
-    </>
-  );
+  return <>{options}</>;
 }
 function RadioButton(props) {
-  const [optionValue, setOptionValue] = useState('')
-  const { inputOptions } = props
-  function onOptionChange(value){
-    setOptionValue(value)
-  }
-  useEffect(() => {
-   console.log(optionValue);
-  })
+  const { inputOptions, onOptionChange, questionId } = props;
   return (
     <div className="group">
-      <AllRadioButtons inputArray={inputOptions} onOptionChange={onOptionChange} />
+      <AllRadioButtons
+        inputArray={inputOptions}
+        onOptionChange={onOptionChange}
+        questionId={questionId}
+      />
     </div>
   );
 }
 
-export default RadioButton
+export default RadioButton;
