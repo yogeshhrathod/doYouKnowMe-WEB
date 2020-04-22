@@ -16,14 +16,7 @@ function AllRadioButtons(inputOptions) {
   );
 }
 function RadioButton(props) {
-  const [optionValue, setOptionValue] = useState('')
-  const { inputOptions } = props
-  function onOptionChange(value){
-    setOptionValue(value)
-  }
-  useEffect(() => {
-   console.log(optionValue);
-  })
+  const { inputOptions,onOptionChange } = props
   return (
     <div className="group">
       <AllRadioButtons inputArray={inputOptions} onOptionChange={onOptionChange} />
