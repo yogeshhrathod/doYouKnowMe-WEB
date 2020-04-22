@@ -52,20 +52,22 @@ function App() {
   return (
     <>
       <Alert message={`Please select an option dude. 😰`} isDisplay={isDisplay}/>
-      <div className='questionLayout'>
-        <Question questionInput={questionInput} />
-        <RadioButton
-          inputOptions={inputOptions}
-          onOptionChange={onOptionChange}
-          questionId={currentQuestion}
-        />
-        <Button
-          label={
-            currentQuestion < questionObject.length - 1 ? nextLabel : submitLabel
-          }
-          onClick={nextQuestion}
-          isButtonDisable={isButtonDisable}
-        />
+      <div className='centerContains'>
+        <div className='questionLayout'>
+          <Question questionInput={questionInput} />
+          <RadioButton
+            inputOptions={inputOptions}
+            onOptionChange={onOptionChange}
+            questionId={currentQuestion}
+          />
+          <Button
+            label={
+              currentQuestion < questionObject.length - 1 ? nextLabel : submitLabel
+            }
+            onClick={nextQuestion}
+            isButtonDisable={isButtonDisable}
+          />
+        </div>
       </div>
     </>
   );
