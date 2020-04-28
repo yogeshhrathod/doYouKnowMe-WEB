@@ -60,14 +60,14 @@ function App() {
             onOptionChange={onOptionChange}
             questionId={currentQuestion}
           />
-          <Button
+        </div>
+        <Button
             label={
               currentQuestion < questionObject.length - 1 ? nextLabel : submitLabel
             }
             onClick={nextQuestion}
             isButtonDisable={isButtonDisable}
           />
-        </div>
       </div>
     </>
   );

@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project contains Firebase
+
+create app on the firebase and generate .env file with your configuration
+```
+NODE_ENV=development
+REACT_APP_FIREBASE_API_KEY=keyyy
+REACT_APP_FIREBASE_AUTH_DOMAIN=replaceThis.firebaseapp.com
+REACT_APP_FIREBASE_DATABASE_URL=https://replaceTHis.firebaseio.com
+REACT_APP_FIREBASE_PROJECT_ID=replaceThis-0a7c
+REACT_APP_FIREBASE_STORAGE_BUCKET=replaceThis.appspot.com
+REACT_APP_FIREBASE_MESSEGING_ID=260336030313
+REACT_APP_FIREBASE_APP_ID=1:36030313:web:e967741202e8
+REACT_APP_FIREBASE_MESSUREMENT_ID=string
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
